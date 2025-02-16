@@ -9,7 +9,7 @@ namespace SampleGame
         [SerializeField]
         private LifeComponent _lifeComponent;
         [SerializeField]
-        private RotateComponent _rotateComponent;
+        private LookComponent _lookComponent;
         [SerializeField]
         private MoveComponent _moveComponent;
         [SerializeField]
@@ -21,7 +21,7 @@ namespace SampleGame
         {
             //_rightHandShootComponent.AddCondition(_lifeComponent.IsAlive);
             //_leftHandShootComponent.AddCondition(_lifeComponent.IsAlive);
-            _rotateComponent.AddCondition(_lifeComponent.IsAlive);
+            //_rotateComponent.AddCondition(_lifeComponent.IsAlive);
             _moveComponent.AddCondition(_lifeComponent.IsAlive);
         }
 

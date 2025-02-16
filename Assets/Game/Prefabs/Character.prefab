@@ -279,9 +279,9 @@ GameObject:
   - component: {fileID: 7533625333521889301}
   - component: {fileID: 290081836751006258}
   - component: {fileID: 7108339945246694939}
-  - component: {fileID: 8326922788522332113}
   - component: {fileID: 2614929147537095036}
   - component: {fileID: 2521563269788074332}
+  - component: {fileID: 2095326727519895366}
   m_Layer: 9
   m_Name: Character
   m_TagString: Character
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeComponent: {fileID: 7108339945246694939}
-  _rotateComponent: {fileID: 8326922788522332113}
+  _lookComponent: {fileID: 2095326727519895366}
   _moveComponent: {fileID: 2614929147537095036}
   _rightHandShootComponent: {fileID: 0}
   _leftHandShootComponent: {fileID: 0}
@@ -438,21 +438,6 @@ MonoBehaviour:
   _maxPoints: 5
   _hitPoints: 5
   _isDead: 0
---- !u!114 &8326922788522332113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7490323295220271620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8461d2532cc34912b8123f60843a8227, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationRoot: {fileID: 4102650447071868940}
-  _rotateRate: 0
-  _canRotate: 1
 --- !u!114 &2614929147537095036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +467,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 7490323295220271620}
+--- !u!114 &2095326727519895366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490323295220271620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6dd9ea78b9469faf69d413ee58b9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lookRoot: {fileID: 6620481527559855412}
 --- !u!1 &7801279227858408424
 GameObject:
   m_ObjectHideFlags: 0
