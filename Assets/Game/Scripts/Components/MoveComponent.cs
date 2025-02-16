@@ -5,13 +5,17 @@ namespace SampleGame
 {
     public class MoveComponent : MonoBehaviour
     {
-        [SerializeField] private Transform _root;
-        [SerializeField] private float _speed = 3f;
-        [SerializeField] private Vector3 _moveDirection;
-        [SerializeField] private bool _canMove = true;
+        [SerializeField]
+        private float _speed = 3f;
+        [SerializeField]
+        private Vector3 _moveDirection;
+        [SerializeField]
+        private bool _canMove = true;
+        [SerializeField]
+        private Rigidbody2D _rigidbody;
 
         private readonly AndCondition _andCondition = new();
-        
+
         private void Update()
         {
             this.Move();
@@ -27,7 +31,7 @@ namespace SampleGame
             if (!_canMove || !_andCondition.IsTrue())
                 return;
 
-            _root.position += _moveDirection * _speed * Time.deltaTime;
+            _rigidbody.velocity = new Vector2(_moveDirection.x * _speed, _rigidbody.velocity.y);
         }
 
         public void AddCondition(Func<bool> condition)

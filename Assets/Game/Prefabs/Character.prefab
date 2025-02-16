@@ -282,6 +282,8 @@ GameObject:
   - component: {fileID: 2614929147537095036}
   - component: {fileID: 2521563269788074332}
   - component: {fileID: 2095326727519895366}
+  - component: {fileID: 7640373953503281373}
+  - component: {fileID: 5735796438091124081}
   m_Layer: 9
   m_Name: Character
   m_TagString: Character
@@ -421,6 +423,8 @@ MonoBehaviour:
   _lifeComponent: {fileID: 7108339945246694939}
   _lookComponent: {fileID: 2095326727519895366}
   _moveComponent: {fileID: 2614929147537095036}
+  _groundCheckerComponent: {fileID: 5735796438091124081}
+  _jumpComponent: {fileID: 7640373953503281373}
   _rightHandShootComponent: {fileID: 0}
   _leftHandShootComponent: {fileID: 0}
 --- !u!114 &7108339945246694939
@@ -480,6 +484,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lookRoot: {fileID: 6620481527559855412}
+--- !u!114 &7640373953503281373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490323295220271620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f7468f8d9a468f9373135b74e547ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 5
+  _rigidbody: {fileID: 8342082945872629457}
+--- !u!114 &5735796438091124081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490323295220271620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d8ebafda3a48b0858db3d1e43881b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _groundCheck: {fileID: 1768056685699584485}
+  _groundCheckRadius: 0.1
 --- !u!1 &7801279227858408424
 GameObject:
   m_ObjectHideFlags: 0

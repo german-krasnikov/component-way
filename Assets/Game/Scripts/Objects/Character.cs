@@ -13,6 +13,10 @@ namespace SampleGame
         [SerializeField]
         private MoveComponent _moveComponent;
         [SerializeField]
+        private GroundCheckerComponent _groundCheckerComponent;
+        [SerializeField]
+        private JumpComponent _jumpComponent;
+        [SerializeField]
         private ShootComponent _rightHandShootComponent;
         [SerializeField]
         private ShootComponent _leftHandShootComponent;
@@ -23,6 +27,7 @@ namespace SampleGame
             //_leftHandShootComponent.AddCondition(_lifeComponent.IsAlive);
             //_rotateComponent.AddCondition(_lifeComponent.IsAlive);
             _moveComponent.AddCondition(_lifeComponent.IsAlive);
+            _jumpComponent.AddCondition(_groundCheckerComponent.IsGrounded);
         }
 
         private void OnEnable()
