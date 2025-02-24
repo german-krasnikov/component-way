@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SampleGame
@@ -9,6 +10,7 @@ namespace SampleGame
 
         protected override Vector3[] InitPoints()
         {
+            if (_ground == null) return null;
             var tr = _ground.transform;
             var size = _ground.size * 0.5f;
             var offset = _ground.offset;
