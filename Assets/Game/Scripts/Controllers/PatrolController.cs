@@ -26,7 +26,7 @@ namespace SampleGame
         {
             _direction = _patrolComponent.GetCurrentPoint() - transform.position;
             _moveComponent.SetDirection(_direction);
-            _lookComponent.SetDirection(_direction);
+            _lookComponent?.SetDirection(_direction);
         }
 
         private void Update()
