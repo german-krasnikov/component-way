@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7845036276167105276}
   - component: {fileID: 1599025579162667576}
   - component: {fileID: 4998109996826579298}
+  - component: {fileID: 4143604094582879480}
+  - component: {fileID: 3518069128497171370}
+  - component: {fileID: 7508930459639897018}
   m_Layer: 3
   m_Name: <Platform>
   m_TagString: Platform
@@ -60,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!61 &4998109996826579298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106,6 +109,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &4143604094582879480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240930164425400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54677e3b4b9343d59c8cbee402466ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0.3
+  _moveDirection: {x: 0, y: 0, z: 0}
+  _canMove: 1
+  _rigidbody: {fileID: 1599025579162667576}
+  _useRigidbody: 0
+--- !u!114 &3518069128497171370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240930164425400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa481a32e0dc4387a766c28bb3b82524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _character: {fileID: 240930164425400058}
+--- !u!114 &7508930459639897018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240930164425400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7e52f243ba443c9109720cc4599ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arriveRadius: 0.2
+  _transformPoints:
+  - {fileID: 5434138037557620653}
+  - {fileID: 7441270365842623162}
 --- !u!1 &2402534428499199933
 GameObject:
   m_ObjectHideFlags: 0

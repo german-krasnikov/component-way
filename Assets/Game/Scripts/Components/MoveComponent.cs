@@ -13,13 +13,12 @@ namespace SampleGame
         private bool _canMove = true;
         [SerializeField]
         private Rigidbody2D _rigidbody;
+        [SerializeField]
+        private bool _useRigidbody = true;
 
         private readonly AndCondition _andCondition = new();
 
-        private void Update()
-        {
-            this.Move();
-        }
+        private void Update() => this.Move();
 
         public void SetDirection(Vector3 direction)
         {
@@ -31,7 +30,14 @@ namespace SampleGame
             if (!_canMove || !_andCondition.IsTrue())
                 return;
 
-            _rigidbody.velocity = new Vector2(_moveDirection.x * _speed, _rigidbody.velocity.y);
+            if (_useRigidbody)
+            {
+                _rigidbody.velocity = new Vector2(_moveDirection.x * _speed, _rigidbody.velocity.y);
+            }
+            else
+            {
+                transform.position += _moveDirection * _speed * Time.deltaTime;
+            }
         }
 
         public void AddCondition(Func<bool> condition)
