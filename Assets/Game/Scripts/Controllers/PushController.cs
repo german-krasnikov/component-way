@@ -22,7 +22,7 @@ namespace SampleGame
 
                 if (target != null)
                 {
-                    _pushComponent.Push(target, Vector3.up);
+                    _pushComponent.Force(target, Vector3.up);
                 }
             }
         }

@@ -8,6 +8,7 @@ namespace SampleGame
         private Transform _lookRoot;
         private bool _facingRight = true;
         private Vector3 _lookDirection;
+        public Vector3 LookDirection => _facingRight ? Vector3.right : Vector3.left;
 
         public void SetDirection(Vector3 direction) => _lookDirection = direction;
 

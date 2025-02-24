@@ -17,6 +17,7 @@ namespace SampleGame
         private bool _useRigidbody = true;
 
         private readonly AndCondition _andCondition = new();
+        public Vector3 MoveDirection => _moveDirection;
 
         private void Update() => this.Move();
 
