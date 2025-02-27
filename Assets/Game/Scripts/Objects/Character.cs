@@ -15,6 +15,8 @@ namespace SampleGame
         private GroundCheckerComponent _groundCheckerComponent;
         [SerializeField]
         private JumpComponent _jumpComponent;
+        [SerializeField]
+        private JumpDeformationComponent _jumpDeformationComponent;
 
         private void Awake()
         {
@@ -25,16 +27,17 @@ namespace SampleGame
         private void OnEnable()
         {
             _lifeComponent.OnEmpty += OnHealthEmpty;
+            _jumpComponent.OnJump += OnJump;
         }
+
+        private void OnJump() => _jumpDeformationComponent.AnimateJump();
 
         private void OnDisable()
         {
             _lifeComponent.OnEmpty -= OnHealthEmpty;
+            _jumpComponent.OnJump -= OnJump;
         }
 
-        private void OnHealthEmpty()
-        {
-            gameObject.SetActive(false);
-        }
+        private void OnHealthEmpty() => gameObject.SetActive(false);
     }
 }
