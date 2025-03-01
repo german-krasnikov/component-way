@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SampleGame
 {
-    public class JumpDeformationComponent : MonoBehaviour
+    public class JumpAnimationComponent : MonoBehaviour
     {
         public void AnimateJump()
         {

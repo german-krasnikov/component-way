@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SampleGame
 {
@@ -16,7 +17,9 @@ namespace SampleGame
         [SerializeField]
         private JumpComponent _jumpComponent;
         [SerializeField]
-        private JumpDeformationComponent _jumpDeformationComponent;
+        private JumpAnimationComponent _jumpAnimationComponent;
+        [SerializeField]
+        private DamageAnimationComponent _damageAnimationComponent;
 
         private void Awake()
         {
@@ -27,15 +30,19 @@ namespace SampleGame
         private void OnEnable()
         {
             _lifeComponent.OnEmpty += OnHealthEmpty;
+            _lifeComponent.OnTakeDamage += OnTakeDamage;
             _jumpComponent.OnJump += OnJump;
         }
 
-        private void OnJump() => _jumpDeformationComponent.AnimateJump();
+        private void OnTakeDamage() => _damageAnimationComponent.AnimateDamage();
+
+        private void OnJump() => _jumpAnimationComponent.AnimateJump();
 
         private void OnDisable()
         {
             _lifeComponent.OnEmpty -= OnHealthEmpty;
             _jumpComponent.OnJump -= OnJump;
+            _lifeComponent.OnTakeDamage -= OnTakeDamage;
         }
 
         private void OnHealthEmpty() => gameObject.SetActive(false);

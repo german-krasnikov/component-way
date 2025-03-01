@@ -6,14 +6,13 @@ namespace SampleGame
 {
     public class LifeComponent : MonoBehaviour, IDamageable
     {
+        public event Action OnTakeDamage;
         public event Action OnEmpty;
 
         [SerializeField]
         private int _maxPoints;
-        
         [SerializeField]
         private int _hitPoints;
-        
         [SerializeField]
         private bool _isDead;
 
@@ -26,10 +25,11 @@ namespace SampleGame
             }
 
             _hitPoints -= damage;
+            OnTakeDamage?.Invoke();
             if (_hitPoints <= 0)
             {
                 _isDead = true;
-                this.OnEmpty?.Invoke();
+                OnEmpty?.Invoke();
             }
         }
 
