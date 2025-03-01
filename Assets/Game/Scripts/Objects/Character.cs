@@ -22,11 +22,15 @@ namespace SampleGame
         private AudioComponent _audioComponent;
         [SerializeField]
         private AudioClip _damageAudio;
+        [SerializeField]
+        private ReloadComponent _jumpReloadComponent;
 
         private void Awake()
         {
             _moveComponent.AddCondition(_lifeComponent.IsAlive);
             _jumpComponent.AddCondition(_groundCheckerComponent.IsGrounded);
+            _jumpComponent.AddCondition(_lifeComponent.IsAlive);
+            _jumpComponent.AddCondition(_jumpReloadComponent.IsReady);
         }
 
         private void OnEnable()
@@ -42,7 +46,11 @@ namespace SampleGame
             _audioComponent.Play(_damageAudio);
         }
 
-        private void OnJump() => _jumpAnimationComponent.AnimateJump();
+        private void OnJump()
+        {
+            _jumpAnimationComponent.AnimateJump();
+            _jumpReloadComponent.Reload();
+        }
 
         private void OnDisable()
         {
