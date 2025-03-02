@@ -452,6 +452,10 @@ GameObject:
   - component: {fileID: 8950908812970361893}
   - component: {fileID: 6878998904122611864}
   - component: {fileID: 7157367438823146086}
+  - component: {fileID: 35111719489494998}
+  - component: {fileID: 3651641095234710718}
+  - component: {fileID: 6593397678043207977}
+  - component: {fileID: 4948659082537921653}
   m_Layer: 8
   m_Name: <Snake>
   m_TagString: Untagged
@@ -667,6 +671,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lookRoot: {fileID: 1504080579300883975}
+--- !u!114 &35111719489494998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521204571576199944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e17f6b8c9a49e79566bd7d96e6c7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 7937140358218983994}
+  _damageColor: {r: 1, g: 0.903612, b: 0, a: 1}
+--- !u!114 &3651641095234710718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521204571576199944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981ed1002eab45398372dd0a88c507d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeComponent: {fileID: 2529454150153055848}
+  _damageAnimationComponent: {fileID: 35111719489494998}
+  _tossComponent: {fileID: 4948659082537921653}
+  _damageMakerComponent: {fileID: 6593397678043207977}
+--- !u!114 &6593397678043207977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521204571576199944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab578b08a73e457c802196022627759e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+--- !u!114 &4948659082537921653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521204571576199944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e57f0114784ff08b3d996569292d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _force: 5
+  _checkRadius: 5
+  _checkPoint: {fileID: 1819249752555060710}
+  _tossSound: {fileID: 0}
+  _tossVfx: {fileID: 0}
+  _audioComponent: {fileID: 0}
 --- !u!1 &9168432786817898581
 GameObject:
   m_ObjectHideFlags: 0
