@@ -1,10 +1,15 @@
+using UnityEngine;
+
 namespace SampleGame
 {
-    public class Trap : DamageMaker
+    public class Trap : MonoBehaviour
     {
-        private void OnEnable() => OnMakeDamage += OnMakeDamageHandler;
+        [SerializeField]
+        private DamageMakerComponent _damageMakerComponent;
 
-        private void OnDisable() => OnMakeDamage -= OnMakeDamageHandler;
+        private void OnEnable() => _damageMakerComponent.OnMakeDamage += OnMakeDamageHandler;
+
+        private void OnDisable() => _damageMakerComponent.OnMakeDamage -= OnMakeDamageHandler;
 
         private void OnMakeDamageHandler() => Destroy(gameObject);
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SampleGame
 {
-    public class DamageMaker : MonoBehaviour
+    public class DamageMakerComponent : MonoBehaviour
     {
         public event Action OnMakeDamage;
         [SerializeField]
