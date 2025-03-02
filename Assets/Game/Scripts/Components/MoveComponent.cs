@@ -41,9 +41,8 @@ namespace SampleGame
             }
         }
 
-        public void AddCondition(Func<bool> condition)
-        {
-            _andCondition.AddCondition(condition);
-        }
+        public void AddCondition(Func<bool> condition) => _andCondition.AddCondition(condition);
+
+        public void RemoveCondition(Func<bool> condition) => _andCondition.RemoveCondition(condition);
     }
 }

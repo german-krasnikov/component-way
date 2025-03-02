@@ -1,12 +1,13 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace SampleGame
 {
     public class DetectAndForceTargetByPointComponent : MonoBehaviour
     {
-        public event Action OnForce; 
-        
+        public event Action OnForce;
+
         [SerializeField]
         private LayerMask _targetLayer;
         [SerializeField]
@@ -22,9 +23,14 @@ namespace SampleGame
         {
             if (target.TryGetComponent(out Rigidbody2D rigidbody2D))
             {
+                var moveComponent = target.GetComponent<MoveComponent>();
+                moveComponent?.AddCondition(FreezeCondition);
                 rigidbody2D.AddForce(direction * _force, ForceMode2D.Impulse);
+                DOVirtual.DelayedCall(0.3f, () => moveComponent?.RemoveCondition(FreezeCondition));
                 OnForce?.Invoke();
             }
         }
+
+        private bool FreezeCondition() => false;
     }
 }
