@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SampleGame
 {
-    public class LifeComponent : MonoBehaviour, IDamageable
+    public class LifeComponent : MonoBehaviour, IDamageTaker
     {
         public event Action OnTakeDamage;
         public event Action OnEmpty;
@@ -17,11 +17,11 @@ namespace SampleGame
         private bool _isDead;
 
         [Button]
-        public void TakeDamage(int damage)
+        public bool TakeDamage(int damage)
         {
             if (_isDead)
             {
-                return;
+                return false;
             }
 
             _hitPoints -= damage;
@@ -31,6 +31,8 @@ namespace SampleGame
                 _isDead = true;
                 OnEmpty?.Invoke();
             }
+
+            return true;
         }
 
         public bool IsAlive()

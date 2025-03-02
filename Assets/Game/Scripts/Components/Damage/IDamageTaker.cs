@@ -2,9 +2,9 @@ using System;
 
 namespace SampleGame
 {
-    public interface IDamageable
+    public interface IDamageTaker
     {
         event Action OnTakeDamage;
-        void TakeDamage(int damage);
+        bool TakeDamage(int damage);
     }
 }

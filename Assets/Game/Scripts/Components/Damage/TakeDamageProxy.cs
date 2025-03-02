@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace SampleGame
 {
-    public class TakeDamageProxy : MonoBehaviour, IDamageable
+    public class TakeDamageProxy : MonoBehaviour, IDamageTaker
     {
         public event Action OnTakeDamage;
         
@@ -14,7 +14,7 @@ namespace SampleGame
 
         public void OnDisable() => _lifeComponent.OnTakeDamage -= OnTakeDamageHandler;
 
-        public void TakeDamage(int damage) => _lifeComponent.TakeDamage(damage);
+        public bool TakeDamage(int damage) => _lifeComponent.TakeDamage(damage);
 
         private void OnTakeDamageHandler() => OnTakeDamage?.Invoke();
     }
