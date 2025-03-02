@@ -12,7 +12,10 @@ namespace SampleGame
         private TossComponent _tossComponent;
         [SerializeField]
         private DamageMakerComponent _damageMakerComponent;
-
+        [SerializeField]
+        private AudioComponent _audioComponent;
+        [SerializeField]
+        private AudioClip _damageSound;
         private void OnEnable()
         {
             _lifeComponent.OnTakeDamage += OnTakeDamageHandler;
@@ -25,8 +28,12 @@ namespace SampleGame
             _damageMakerComponent.OnMakeDamage -= OnMakeDamageHandler;
         }
 
-        private void OnTakeDamageHandler() => _damageAnimationComponent.AnimateDamage();
-        
+        private void OnTakeDamageHandler()
+        {
+            _damageAnimationComponent.AnimateDamage();
+            _audioComponent.Play(_damageSound);
+        }
+
         private void OnMakeDamageHandler()
         {
             var target = _tossComponent.GetTarget();
