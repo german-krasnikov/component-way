@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SampleGame
 {
@@ -21,9 +22,11 @@ namespace SampleGame
         [SerializeField]
         private AudioComponent _audioComponent;
         [SerializeField]
-        private AudioClip _damageAudio;
+        private AudioClip _damageSound;
         [SerializeField]
         private ReloadComponent _jumpReloadComponent;
+        [SerializeField]
+        private AudioClip _jumpSound;
 
         private void Awake()
         {
@@ -43,13 +46,14 @@ namespace SampleGame
         private void OnTakeDamage()
         {
             _damageAnimationComponent.AnimateDamage();
-            _audioComponent.Play(_damageAudio);
+            _audioComponent.Play(_damageSound);
         }
 
         private void OnJump()
         {
             _jumpAnimationComponent.AnimateJump();
             _jumpReloadComponent.Reload();
+            _audioComponent.Play(_jumpSound);
         }
 
         private void OnDisable()

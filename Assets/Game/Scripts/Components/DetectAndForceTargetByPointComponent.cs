@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 namespace SampleGame
 {
     public class DetectAndForceTargetByPointComponent : MonoBehaviour
     {
+        public event Action OnForce; 
+        
         [SerializeField]
         private LayerMask _targetLayer;
         [SerializeField]
@@ -20,6 +23,7 @@ namespace SampleGame
             if (target.TryGetComponent(out Rigidbody2D rigidbody2D))
             {
                 rigidbody2D.AddForce(direction * _force, ForceMode2D.Impulse);
+                OnForce?.Invoke();
             }
         }
     }

@@ -7,25 +7,23 @@ namespace SampleGame
     {
         [SerializeField]
         private GameObject _character;
+        [SerializeField]
+        private ReloadComponent _reloadComponent;
 
         private TossComponent _tossController;
-        private LookComponent _lookComponent;
 
-        private void Awake()
-        {
-            _tossController = _character.GetComponent<TossComponent>();
-            _lookComponent = _character.GetComponent<LookComponent>();
-        }
+        private void Awake() => _tossController = _character.GetComponent<TossComponent>();
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.F) || Input.GetMouseButtonDown(1))
+            if ((Input.GetKey(KeyCode.E) || Input.GetMouseButtonDown(1)) && _reloadComponent.IsReady())
             {
                 var target = _tossController.GetTarget();
 
                 if (target != null)
                 {
-                    _tossController.Force(target, _lookComponent.LookDirection);
+                    _tossController.Force(target, Vector3.up);
+                    _reloadComponent.Reload();
                 }
             }
         }
