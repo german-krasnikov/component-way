@@ -240,6 +240,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4979841302588641904}
   - component: {fileID: 2682617834291874480}
+  - component: {fileID: 2138593030890471260}
+  - component: {fileID: 7369251650404054480}
+  - component: {fileID: 8209313876281996999}
+  - component: {fileID: 380465393090379727}
   m_Layer: 6
   m_Name: Trampoline
   m_TagString: Untagged
@@ -309,3 +313,62 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &2138593030890471260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a6999bd49447be9322ac557f3d84c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionComponent: {fileID: 7369251650404054480}
+  _tossComponent: {fileID: 8209313876281996999}
+--- !u!114 &7369251650404054480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb030247350a465caa5268162fe66b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8209313876281996999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e57f0114784ff08b3d996569292d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _force: 25
+  _checkRadius: 1
+  _checkPoint: {fileID: 4979841302588641904}
+  _tossSound: {fileID: 8300000, guid: 08ef3735b9527d54ab97d0e9fc9d505d, type: 3}
+  _tossVfx: {fileID: 0}
+  _audioComponent: {fileID: 380465393090379727}
+--- !u!114 &380465393090379727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37ecfb7d42634a40ae80bc50e4cd3c69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
