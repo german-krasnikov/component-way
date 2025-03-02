@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: 445767539348082696}
   - component: {fileID: 2300439342568327082}
   - component: {fileID: 5158572972830720246}
+  - component: {fileID: 3823532715403791082}
   m_Layer: 8
   m_Name: <Spider>
   m_TagString: Untagged
@@ -642,7 +643,8 @@ MonoBehaviour:
   _lifeComponent: {fileID: 3784331457699887283}
   _damageAnimationComponent: {fileID: 2300439342568327082}
   _damageMakerComponent: {fileID: 445767539348082696}
-  _pushComponent: {fileID: 0}
+  _pushComponent: {fileID: 5158572972830720246}
+  _lookComponent: {fileID: 3823532715403791082}
 --- !u!114 &3784331457699887283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,9 +748,22 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 512
-  _force: 5
+  _force: 10
   _checkRadius: 2
   _checkPoint: {fileID: 797735510629636468}
   _pushSound: {fileID: 0}
   _pushVfx: {fileID: 0}
   _audioComponent: {fileID: 0}
+--- !u!114 &3823532715403791082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665529919726988981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6dd9ea78b9469faf69d413ee58b9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lookRoot: {fileID: 3105770917179402914}

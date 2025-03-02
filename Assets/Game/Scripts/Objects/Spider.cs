@@ -4,7 +4,7 @@ namespace SampleGame
 {
     public class Spider : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private LifeComponent _lifeComponent;
         [SerializeField]
         private DamageAnimationComponent _damageAnimationComponent;
@@ -12,7 +12,9 @@ namespace SampleGame
         private DamageMakerComponent _damageMakerComponent;
         [SerializeField]
         private PushComponent _pushComponent;
-        
+        [SerializeField]
+        private LookComponent _lookComponent;
+
         private void OnEnable()
         {
             _damageMakerComponent.OnMakeDamage += OnMakeDamageHandler;
@@ -29,7 +31,9 @@ namespace SampleGame
 
         private void OnMakeDamageHandler()
         {
-            //_pushComponent.Force();
+            var target = _pushComponent.GetTarget();
+            if (target == null) return;
+            _pushComponent.Force(target, _lookComponent.LookDirection + Vector3.up);
         }
     }
 }
